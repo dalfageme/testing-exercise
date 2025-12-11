@@ -1,0 +1,128 @@
+:root {
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  color: #0d1b2a;
+  background: #f5f6fa;
+}
+
+#root {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 3rem;
+}
+
+.app {
+  background: #ffffff;
+  border: 1px solid #e8ebf0;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.header h1 {
+  margin: 0.2rem 0 0.4rem;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: #4f46e5;
+  margin: 0;
+}
+
+.hint {
+  margin: 0;
+  color: #5c6a80;
+  font-size: 0.95rem;
+}
+
+.event-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.event {
+  border: 1px solid #e8ebf0;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(120deg, #f8fbff 0%, #ffffff 100%);
+}
+
+.event h2 {
+  margin: 0 0 0.2rem;
+  font-size: 1.15rem;
+}
+
+.price {
+  margin: 0;
+  color: #526375;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.controls button {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid #d8e0eb;
+  background: #f3f6fb;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: transform 120ms ease, box-shadow 120ms ease;
+}
+
+.controls button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.controls button:not(:disabled):hover {
+  box-shadow: 0 6px 14px rgba(17, 24, 39, 0.08);
+}
+
+.controls button:not(:disabled):active {
+  transform: translateY(1px);
+}
+
+.quantity {
+  min-width: 24px;
+  text-align: center;
+  font-weight: 700;
+  color: #0d1b2a;
+}
+
+.total {
+  border-top: 1px solid #e8ebf0;
+  padding-top: 1rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-align: right;
+}
+
+@media (max-width: 640px) {
+  #root {
+    padding: 1.25rem;
+  }
+
+  .event {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .total {
+    text-align: left;
+  }
+}
