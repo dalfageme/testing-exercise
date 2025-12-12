@@ -13,9 +13,20 @@ const EVENTS = [
 function App() {
   const [total, setTotal] = useState(0)
 
-  const updateTotal = (price) => {
-    // Bug intencionado: se pisa el total con el último precio clicado.
-    setTotal(price)
+  const addToCart = (price) => {
+    setTotal((prevTotal) => {
+      return prevTotal + price
+    })
+  }
+
+  const removeFromCart = (price) => {
+    setTotal((prevTotal) => {
+      return prevTotal - price
+    })
+  }
+
+  const emptyCart = () => {
+    setTotal(0)
   }
 
   return (
@@ -27,9 +38,13 @@ function App() {
           Usa + o - para simular añadir o quitar entradas y comprobar el total.
         </p>
       </header>
-
-      <EventList events={EVENTS} onSelectPrice={updateTotal} />
+      <EventList
+        events={EVENTS} 
+        onAddToCart={addToCart}
+        onRemoveFromCart={removeFromCart}
+      />
       <CartTotal total={total} />
+      <button onClick={emptyCart}>Vaciar carrito</button>
       <DelayedPromo />
     </main>
   )

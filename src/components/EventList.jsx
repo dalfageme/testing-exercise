@@ -1,4 +1,4 @@
-function EventList({ events, onSelectPrice }) {
+function EventList({ events, onAddToCart, onRemoveFromCart }) {
   return (
     <section className="event-list" aria-label="lista de eventos">
       {events.map((event) => (
@@ -10,14 +10,13 @@ function EventList({ events, onSelectPrice }) {
           <div className="controls">
             <button
               aria-label={`Restar ${event.name}`}
-              onClick={() => onSelectPrice(event.price)}
-              disabled
+              onClick={() => onRemoveFromCart(event.price)}
             >
               -
             </button>
             <button
               aria-label={`Añadir ${event.name}`}
-              onClick={() => onSelectPrice(event.price)}
+              onClick={() => onAddToCart(event.price)}
             >
               +
             </button>
