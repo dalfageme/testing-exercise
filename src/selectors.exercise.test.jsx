@@ -31,7 +31,7 @@ describe('ejercicios de selectores', () => {
     expect(noEventsMessage).not.toBeInTheDocument()
   })
 
-  it.skip('devuelve un array vacío cuando no hay etiquetas de "agotado"', () => {
+  it.skip('no hay etiquetas de "agotado"', () => {
     render(<App />)
     
     // sustituir null por el selector adecuado
