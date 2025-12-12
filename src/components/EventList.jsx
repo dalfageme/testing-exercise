@@ -11,6 +11,7 @@ function EventList({ events, onSelectPrice }) {
             <button
               aria-label={`Restar ${event.name}`}
               onClick={() => onSelectPrice(event.price)}
+              disabled
             >
               -
             </button>
